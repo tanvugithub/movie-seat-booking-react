@@ -1,0 +1,222 @@
+.seat-booking-template {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 100%;
+    min-height: 100vh;
+
+    .col-left,
+    .col-right {
+        background: rgba(255, 255, 255, 0.07);
+        padding: 20px;
+        border-radius: 10px;
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 5px;
+            border: 1px solid #aaa;
+            background-color: transparent;
+            color: #fff;
+            border-radius: 5px;
+            &:focus {
+                outline: none;
+                border-color: #fff;
+            }
+        }
+        input[type="text"] {
+            min-width: 300px;
+        }
+        input[type="number"] {
+            width: 100px;
+        }
+
+        .block-title {
+            font-size: 24px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .info {
+            .info__name {
+                font-weight: 600;
+                margin-top: 20px;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+                tr {
+                    border-bottom: 1px solid #fff;
+                    th {
+                        padding: 10px;
+                        text-align: center;
+                    }
+
+                    td {
+                        padding: 10px;
+                        text-align: center;
+                        button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: #d50101;
+                            color: #fff;
+                            border: none;
+                            padding: 3px 10px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: all 0.3s;
+                            &:hover {
+                                background: #fb5858;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .seat {
+        display: inline-block;
+        background: #ddd;
+        width: 20px;
+        height: 15px;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        transition: transform 0.3s ease-in-out;
+        position: relative;
+        top: 1px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .seat {
+            width: 36px;
+            height: 24px;
+        }
+    }
+
+    .seat.selected {
+        background: #00c20a !important;
+    }
+
+    .seat.occupied {
+        background: #ff0000;
+    }
+
+    .cinema {
+        perspective: 300px;
+        padding-top: 50px;
+
+        .screen {
+            height: 100px;
+            background: white;
+            width: 90%;
+            transform: rotateX(-30deg);
+            box-shadow: 0 3px 10px 2px;
+            background-color: #ffa304;
+            margin: auto;
+        }
+
+        .showCase {
+            // width: 35%;
+            margin: 30px auto;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 12px;
+            border-radius: 4px;
+            color: #7e7e7e;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .showCase li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 0 12px;
+        }
+
+        .seats {
+            width: 100%;
+            margin: auto;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-weight: 600;
+
+            .seat-row {
+                display: grid;
+                grid-gap: 7px;
+                grid-template-columns: repeat(13, 1fr);
+                align-items: center;
+                place-content: center;
+                place-items: center;
+
+                .seat-row-name {
+                    color: #ffbd15;
+                }
+                .seat-number {
+                    width: 30px;
+                    display: flex;
+                    justify-content: center;
+                    color: #ffbd15;
+                }
+                .seat-number:nth-of-type(13n + 5) {
+                    margin-right: 0px;
+                }
+
+                .seat:nth-of-type(13n + 5) {
+                    margin-right: 0px;
+                }
+
+                @media only screen and (min-width: 768px) {
+                    .seat-number:nth-of-type(13n + 5) {
+                        margin-right: 80px;
+                    }
+
+                    .seat:nth-of-type(13n + 5) {
+                        margin-right: 80px;
+                    }
+                }
+
+                //     .seat:nth-of-type(13n + 6) {
+                //         margin-right: 20px;
+                //     }
+
+                .seat:not(.occupied):hover,
+                .seat:not(.occupied):focus {
+                    cursor: pointer;
+                    background: #c1eac5;
+                    transform: scale(1.2);
+                }
+                .seat.selected::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 2px;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 100%;
+                    background: transparent;
+                    border: 1px solid #7bc47f;
+                    animation: show-off 0.8s;
+                    visibility: hidden;
+                }
+                @keyframes show-off {
+                    0% {
+                        transform: scale(1);
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    100% {
+                        transform: scale(3);
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}

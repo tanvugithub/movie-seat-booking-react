@@ -1,0 +1,15 @@
+{
+    "seatBooking": {
+        "lang": "Ngôn ngữ",
+        "brand": "ĐẶT VÉ XEM PHIM",
+        "listSeatTitle": "Danh sách ghế bạn chọn",
+        "fullName": "Họ tên",
+        "seatCode": "Số ghế",
+        "price": "Giá vé",
+        "total": "Tổng tiền",
+        "cancel": "Hủy",
+        "N/A": "N/A",
+        "Selected": "Đã chọn",
+        "Reserved": "Đã đặt"
+    }
+}

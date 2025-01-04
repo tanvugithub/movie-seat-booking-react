@@ -1,0 +1,60 @@
+.home-template {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100vh;
+
+    .model {
+        .left,
+        .right {
+            position: relative;
+            .glass {
+                position: absolute;
+                width: 50%;
+                top: 25%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .description {
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                left: 0;
+                background-color: rgba(250, 153, 34, 0.5);
+                padding: 15px;
+                color: white;
+                font-weight: 500;
+                .name {
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .glasses {
+        .glasses__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: white;
+            padding: 7px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            border-radius: 7px;
+            transition: all 0.3s;
+
+            &:hover {
+                //filter: brightness(1.2); // Tăng độ sáng của ảnh đang hover lên
+                transform: scale(1.1);
+            }
+        }
+
+        &:hover .glasses__item:not(:hover) {
+            // Khi container chứa các ảnh được hover, các ảnh không đang hover sẽ tối đi thêm
+            filter: brightness(0.7); // Giảm độ sáng xuống 60%
+        }
+    }
+}

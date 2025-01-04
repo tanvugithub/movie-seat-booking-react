@@ -1,0 +1,15 @@
+{
+    "seatBooking": {
+        "lang": "Language",
+        "brand": "Movie Seat Selection",
+        "listSeatTitle": "List of seats you have selected",
+        "fullName": "Name",
+        "seatCode": "Seat Code",
+        "price": "Price",
+        "total": "Total",
+        "cancel": "Cancel",
+        "N/A": "N/A",
+        "Selected": "Selected",
+        "Reserved": "Reserved"
+    }
+}
