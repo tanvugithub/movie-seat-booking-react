@@ -1,7 +1,9 @@
-### form:
+### Movie seat booking:
 
-# 1. react-hook-form
+# 1. State
 
-# 2. zod
+# 2. Redux
 
-# 3. @hookform/resolvers
+# 3. Translate laguage en | vi
+
+# 4. Dark theme | Light theme
